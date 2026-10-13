@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { blank, LEGAL } from "@/lib/legal";
+import { CONTACT_URL, LEGAL } from "@/lib/legal";
 import { Doc, DraftBanner, List, P, Section } from "@/components/doc";
 
 export const metadata: Metadata = {
@@ -8,8 +8,6 @@ export const metadata: Metadata = {
   description: "SiteDesk uygulamasında hangi kişisel verilerin, neden ve ne kadar süre tutulduğu (KVKK aydınlatma metni).",
   robots: LEGAL.reviewed ? undefined : { index: false },
 };
-
-const email = blank(LEGAL.email, "e-posta adresi");
 
 // Gizlilik politikası ve KVKK aydınlatma metni (TASLAK — hukukçu incelemesi bekliyor). Mağazalar bu sayfanın adresini ister.
 export default function PrivacyPage() {
@@ -31,11 +29,11 @@ export default function PrivacyPage() {
       <Section title="2. Veri sorumlusu kim?">
         <P>
           Sitenizdeki sakin, daire/villa, arıza, kargo ve ziyaretçi bilgilerinin <strong>veri sorumlusu sitenizin yönetimidir</strong>; bu bilgileri hangi amaçla tuttuğuna yönetim karar
-          verir. SiteDesk ({blank(LEGAL.owner, "geliştirici adı / ticari unvan")}, {blank(LEGAL.city, "il")}) bu bilgileri yönetim adına ve onun talimatıyla işleyen{" "}
+          verir. SiteDesk (ücretsiz, açık kaynak bir proje) bu bilgileri yönetim adına ve onun talimatıyla işleyen{" "}
           <strong>veri işleyendir</strong>. Uygulama hesabınızın kendisi (giriş bilgileri) için SiteDesk veri sorumlusudur.
         </P>
         <P>
-          İletişim: {email} · Adres: {blank(LEGAL.address, "tebligat adresi")}
+          İletişim: <a href={CONTACT_URL} className="font-medium text-primary underline underline-offset-4">GitHub üzerinden</a> (kişisel bilgilerinizi oraya yazmayın).
         </P>
       </Section>
 
@@ -93,12 +91,12 @@ export default function PrivacyPage() {
         <List
           items={[
             <><strong>Supabase</strong>: veritabanı ve dosyalar (sunucu: Avrupa Birliği, Almanya/Frankfurt).</>,
-            <><strong>Vercel</strong>: web sitesi, sunucu işlemleri ve günlük şifreli yedek (sunucu: Avrupa Birliği, Almanya/Frankfurt; yedek deposu {"[bölge doğrulanacak]"}).</>,
+            <><strong>Vercel</strong>: web sitesi ve sunucu işlemleri (sunucu: Avrupa Birliği, Almanya/Frankfurt) ile günlük şifreli yedekler (Vercel Blob deposu).</>,
             <><strong>Expo, Google (Firebase) ve Apple</strong>: telefon bildirimlerinin iletilmesi (ABD). Bildirimde sadece kısa başlık ve daire/villa etiketi bulunur.</>,
           ]}
         />
         <P>
-          Bu sağlayıcıların bir kısmı yurt dışındadır; aktarım KVKK m.9 kapsamında yapılır {"[aktarım dayanağı hukukçuyla netleştirilecek]"}. Davet ve şifre yenileme mesajları site yönetiminin
+          Bu sağlayıcıların bir kısmı yurt dışındadır; aktarım bu hizmeti sunmak için yapılır. Davet ve şifre yenileme mesajları site yönetiminin
           kendi WhatsApp hesabından gönderilir; SiteDesk WhatsApp&apos;a bilgi göndermez.
         </P>
       </Section>
@@ -131,8 +129,8 @@ export default function PrivacyPage() {
       <Section title="9. Haklarınız (KVKK m.11)">
         <P>
           Bilgilerinizin işlenip işlenmediğini öğrenme, bilgi isteme, düzeltilmesini ya da silinmesini isteme, aktarıldığı kişileri öğrenme, itiraz etme ve zarara uğradıysanız
-          giderilmesini isteme haklarınız vardır. Sitenizdeki kayıtlarla ilgili istekleriniz için önce site yönetiminize, hesabınızla ilgili istekleriniz için {email} adresine
-          yazabilirsiniz. Başvurular en geç 30 gün içinde cevaplanır.
+          giderilmesini isteme haklarınız vardır. Sitenizdeki kayıtlarla ilgili istekleriniz için önce site yönetiminize, hesabınızla ilgili istekleriniz için <a href={CONTACT_URL} className="font-medium text-primary underline underline-offset-4">GitHub üzerinden</a>{" "}
+          yazabilirsiniz (kişisel bilgilerinizi herkese açık kayda yazmayın). Başvurular en geç 30 gün içinde cevaplanır.
         </P>
         <P>
           Hesabınızı hemen silmek için: uygulamada <strong>Profil › Hesabımı Sil</strong> ya da{" "}

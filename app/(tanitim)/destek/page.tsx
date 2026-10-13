@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { blank, LEGAL } from "@/lib/legal";
+import { CONTACT_URL } from "@/lib/legal";
 import { Doc, List, Note, P, Section } from "@/components/doc";
 
 export const metadata: Metadata = {
@@ -80,7 +80,7 @@ export default function SupportPage() {
               </Link>{" "}
               (telefon numaranız ve şifrenizle).
             </>,
-            <>Şifrenizi de hatırlamıyorsanız telefon numaranızla birlikte {blank(LEGAL.email, "e-posta adresi")} adresine yazın; kimliğinizi doğruladıktan sonra en geç 30 gün içinde sileriz.</>,
+            <>Şifrenizi de hatırlamıyorsanız <a href={CONTACT_URL} className="font-medium text-primary underline underline-offset-4">GitHub üzerinden</a> bir kayıt (issue) açın; telefon numaranızı oraya yazmayın, kimliğinizi nasıl doğrulayacağımızı size oradan söyleriz. En geç 30 gün içinde sileriz.</>,
           ]}
         />
         <P>
@@ -94,9 +94,7 @@ export default function SupportPage() {
 
       <Section title="İletişim">
         <P>
-          E-posta: {blank(LEGAL.email, "e-posta adresi")}
-          <br />
-          {blank(LEGAL.owner, "geliştirici adı / ticari unvan")} · {blank(LEGAL.city, "il")}
+          Soru, öneri ve hata bildirimleri için <a href={CONTACT_URL} className="font-medium text-primary underline underline-offset-4">GitHub üzerinden</a> ulaşın (sayfada “New issue”). SiteDesk ücretsiz ve açık kaynak bir projedir; kodu da aynı GitHub deposunda.
         </P>
       </Section>
     </Doc>

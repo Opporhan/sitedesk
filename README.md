@@ -7,10 +7,6 @@ Apartman ve villa siteleri için ücretsiz bir telefon uygulaması: **sakin, dan
 **Canlı tanıtım:** https://sitedesk-sooty.vercel.app
 **Android uygulamasını indir:** [Releases](../../releases/latest) sayfasındaki `SiteDesk.apk` dosyası (Google Play'de değil; telefonda "bilinmeyen kaynaklardan yükleme" izni ister). Uygulamada **"Sitemi Ekle (Yönetici)"** ile kendi deneme sitenizi kurup yönetici olarak deneyebilirsiniz; kendi cep numaranızı kullanın (SMS ile doğrulanmaz). iPhone sürümü şu an yok.
 
-<p align="center"><img src="docs/tanitim.gif" width="320" alt="SiteDesk tanıtım"></p>
-
-<p align="center">🎬 <a href="../../releases/latest/download/SiteDesk-tanitim.mp4">Tanıtım videosu (MP4) / Demo video</a></p>
-
 | Sakin · Resident | | |
 |---|---|---|
 | <img src="docs/gorseller/02-sakin-yeni-kayit.png" width="240"> | <img src="docs/gorseller/03-sakin-kayit-takibi.png" width="240"> | <img src="docs/gorseller/04-sakin-kargo-bildirimi.png" width="240"> |

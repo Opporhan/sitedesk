@@ -43,7 +43,7 @@ export function Note({ children, tone = "bilgi" }: { children: React.ReactNode; 
 export function DraftBanner() {
   return (
     <Note tone="bekliyor">
-      <strong>Taslak:</strong> Bu metin henüz bir hukukçu tarafından incelenmedi. Köşeli parantez içindeki bilgiler doldurulacak.
+      <strong>Not:</strong> SiteDesk ticari olmayan, açık kaynak bir projedir; bu metin bir hukukçu tarafından incelenmemiştir.
     </Note>
   );
 }

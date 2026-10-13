@@ -97,7 +97,7 @@ export default function StoreInfoPage() {
     <Doc title="Mağaza Bilgileri" lead="Google Play ve App Store'a girilecek metinler ve cevaplar. Bu sayfa arama motorlarına kapalıdır ve menüde yoktur.">
       <Note tone="bekliyor">
         <strong>Bekleyen kararlar:</strong> geliştirici adı ({blank(LEGAL.owner, "doldurulacak")}), iletişim e-postası ({blank(LEGAL.email, "doldurulacak")}), il (
-        {blank(LEGAL.city, "doldurulacak")}). Bunlar girilince gizlilik ve destek sayfalarındaki köşeli parantezler de dolar.
+        {blank(LEGAL.city, "doldurulacak")}). Gizlilik ve destek sayfalarında iletişim GitHub üzerinden (kişisel bilgi yok).
       </Note>
 
       <Section title="1. Uygulama kimliği">
