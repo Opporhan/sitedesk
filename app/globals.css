@@ -1,0 +1,117 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+
+/* Koyu tema yok: bileşenlerdeki "dark:" sınıfları hiçbir zaman devreye girmesin */
+@custom-variant dark (&:is([data-theme="koyu-tema-yok"] *));
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-sans);
+    --font-heading: var(--font-sans);
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+  /* Anlam taşıyan renkler: text-borc, bg-odendi-zemin … */
+  --color-borc: var(--borc);
+  --color-borc-zemin: var(--borc-zemin);
+  --color-odendi: var(--odendi);
+  --color-odendi-zemin: var(--odendi-zemin);
+  --color-bekliyor: var(--bekliyor);
+  --color-bekliyor-zemin: var(--bekliyor-zemin);
+  --color-bilgi: var(--bilgi);
+  --color-bilgi-zemin: var(--bilgi-zemin);
+  --radius-sm: calc(var(--radius) * 0.6);
+  --radius-md: calc(var(--radius) * 0.8);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) * 1.4);
+  --radius-2xl: calc(var(--radius) * 1.8);
+  --radius-3xl: calc(var(--radius) * 2.2);
+  --radius-4xl: calc(var(--radius) * 2.6);
+}
+
+:root {
+  --radius: 0.75rem;
+}
+
+/* =====================================================================
+   RENKLER — TEK YER (kullanıcı kararı, 03.10.2026)
+   Tek tema: "bej". Bir tonu değiştirmek için aşağıdaki ilgili satırı değiştirmek yeterli;
+   bütün sayfalar bu adlardan okur. Kural: saf beyaz (#FFFFFF) ve saf siyah (#000000) zemin/yazı yok.
+   ===================================================================== */
+:root,
+[data-theme="bej"] {
+  --zemin: #f3ede2;          /* sayfa zemini: krem-bej */
+  --kutu: #faf6ef;           /* kart/kutu: zeminin bir ton açığı */
+  --kutu-koyu: #eae2d4;      /* soluk kutu, sekme zemini */
+  --yazi: #3a322b;           /* koyu kahve-gri */
+  --yazi-soluk: #675c51;     /* açıklama, tarih */
+  --cizgi: #ddd2c2;
+  --vurgu: #0f6e66;          /* tek vurgu rengi (düğmeler, aktif sekme) */
+  --vurgu-yazi: #f7f2e9;     /* vurgu üstündeki yazı */
+  --vurgu-acik: #dcebe6;     /* seçili öğe zemini */
+  --borc: #b42318;           /* hata, iptal */
+  --borc-zemin: #f5ddd6;
+  --odendi: #1c7442;         /* başarı */
+  --odendi-zemin: #dceadb;
+  --bekliyor: #9a5300;       /* bekleyen, uyarı */
+  --bekliyor-zemin: #f4e4c6;
+  --bilgi: #1d5aa6;
+  --bilgi-zemin: #dce5f1;
+  color-scheme: light;
+}
+
+
+
+/* Bileşenlerin (shadcn) kullandığı adlar yukarıdaki renklerden türer; burada renk yazılmaz */
+:root,
+[data-theme] {
+  --background: var(--zemin);
+  --foreground: var(--yazi);
+  --card: var(--kutu);
+  --card-foreground: var(--yazi);
+  --popover: var(--kutu);
+  --popover-foreground: var(--yazi);
+  --primary: var(--vurgu);
+  --primary-foreground: var(--vurgu-yazi);
+  --secondary: var(--kutu-koyu);
+  --secondary-foreground: var(--yazi);
+  --muted: var(--kutu-koyu);
+  --muted-foreground: var(--yazi-soluk);
+  --accent: var(--vurgu-acik);
+  --accent-foreground: var(--yazi);
+  --destructive: var(--borc);
+  --border: var(--cizgi);
+  --input: var(--cizgi);
+  --ring: var(--vurgu);
+}
+
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+  button:not(:disabled), [role="button"]:not(:disabled) {
+    cursor: pointer;
+  }
+  html {
+    @apply font-sans;
+  }
+}

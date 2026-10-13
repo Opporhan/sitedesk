@@ -1,0 +1,20 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "regions": [
+    "fra1"
+  ],
+  "crons": [
+    {
+      "path": "/api/gorev/yedek",
+      "schedule": "0 1 * * *"
+    },
+    {
+      "path": "/api/gorev/temizlik",
+      "schedule": "0 2 * * *"
+    },
+    {
+      "path": "/api/gorev/saglik",
+      "schedule": "0 5 * * *"
+    }
+  ]
+}

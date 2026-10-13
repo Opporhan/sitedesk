@@ -1,0 +1,14 @@
+# Vercel'e gönderilmeyecekler (gizli anahtarlar, yerel araçlar, testler) — "/" ile başlayanlar sadece ana klasör
+.env*
+!.env.example
+/.git
+/.next
+/node_modules
+/scripts
+/supabase/tests
+/supabase/email-templates
+/supabase/*.sql
+/.claude
+/*.md
+/mobil
+/magaza-gorselleri

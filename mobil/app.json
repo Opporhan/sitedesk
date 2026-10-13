@@ -1,0 +1,82 @@
+{
+  "expo": {
+    "name": "SiteDesk",
+    "slug": "sitedesk",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "automatic",
+    "ios": {
+      "supportsTablet": false,
+      "bundleIdentifier": "com.sitedesk.app"
+    },
+    "android": {
+      "adaptiveIcon": {
+        "backgroundColor": "#0f6e66",
+        "foregroundImage": "./assets/android-icon-foreground.png",
+        "backgroundImage": "./assets/android-icon-background.png",
+        "monochromeImage": "./assets/android-icon-monochrome.png"
+      },
+      "predictiveBackGestureEnabled": false,
+      "package": "com.sitedesk.app",
+      "versionCode": 1,
+      "permissions": [
+        "android.permission.CAMERA",
+        "android.permission.RECORD_AUDIO",
+        "android.permission.USE_BIOMETRIC",
+        "android.permission.USE_FINGERPRINT",
+        "android.permission.POST_NOTIFICATIONS",
+        "android.permission.VIBRATE"
+      ],
+      "blockedPermissions": [
+        "android.permission.READ_EXTERNAL_STORAGE",
+        "android.permission.WRITE_EXTERNAL_STORAGE",
+        "android.permission.READ_MEDIA_IMAGES",
+        "android.permission.READ_MEDIA_VIDEO",
+        "android.permission.READ_MEDIA_AUDIO",
+        "android.permission.READ_MEDIA_VISUAL_USER_SELECTED",
+        "android.permission.SYSTEM_ALERT_WINDOW"
+      ],
+      "googleServicesFile": "./google-services.json"
+    },
+    "plugins": [
+      "expo-router",
+      "expo-status-bar",
+      "expo-font",
+      "expo-secure-store",
+      [
+        "expo-local-authentication",
+        {
+          "faceIDPermission": "SiteDesk'e yüz tanıma ile hızlı ve güvenli giriş yapabilmeniz için."
+        }
+      ],
+      "expo-video",
+      [
+        "expo-image-picker",
+        {
+          "photosPermission": "Kayda fotoğraf veya video ekleyebilmeniz için galerinize erişim gerekiyor.",
+          "cameraPermission": "Arızanın fotoğrafını veya videosunu çekebilmeniz için kameraya erişim gerekiyor.",
+          "microphonePermission": "Video çekerken ses kaydedilebilmesi için mikrofona erişim gerekiyor."
+        }
+      ],
+      [
+        "expo-notifications",
+        {
+          "color": "#0f6e66",
+          "icon": "./assets/android-icon-monochrome.png"
+        }
+      ]
+    ],
+    "scheme": "sitedesk",
+    "experiments": {
+      "typedRoutes": true
+    },
+    "extra": {
+      "router": {},
+      "eas": {
+        "projectId": "590a0f82-a538-461e-b12a-29f11e950322"
+      }
+    },
+    "owner": "orhan2"
+  }
+}

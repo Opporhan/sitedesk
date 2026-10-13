@@ -1,0 +1,32 @@
+{
+  "cli": {
+    "version": ">= 16.0.0",
+    "appVersionSource": "local"
+  },
+  "build": {
+    "preview": {
+      "distribution": "internal",
+      "android": {
+        "buildType": "apk"
+      },
+      "env": {
+        "EXPO_PUBLIC_SUPABASE_URL": "https://biluywmkdohghawioldw.supabase.co",
+        "EXPO_PUBLIC_SUPABASE_PUBLISHABLE_KEY": "sb_publishable_6cK2i-jZcUH8FU43ho4_8w_S-MwE5LE",
+        "EXPO_PUBLIC_WEB_URL": "https://sitedesk-sooty.vercel.app"
+      }
+    },
+    "production": {
+      "android": {
+        "buildType": "app-bundle"
+      },
+      "env": {
+        "EXPO_PUBLIC_SUPABASE_URL": "https://biluywmkdohghawioldw.supabase.co",
+        "EXPO_PUBLIC_SUPABASE_PUBLISHABLE_KEY": "sb_publishable_6cK2i-jZcUH8FU43ho4_8w_S-MwE5LE",
+        "EXPO_PUBLIC_WEB_URL": "https://sitedesk-sooty.vercel.app"
+      }
+    }
+  },
+  "submit": {
+    "production": {}
+  }
+}
