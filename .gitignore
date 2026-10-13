@@ -41,3 +41,6 @@ yarn-error.log*
 next-env.d.ts
 !.env.example
 __pycache__/
+
+# Firebase yapılandırması herkese açık depoda tutulmaz (kendi projenizinkini koyun)
+mobil/google-services.json

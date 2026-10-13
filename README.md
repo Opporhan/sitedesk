@@ -7,6 +7,16 @@ Apartman ve villa siteleri için ücretsiz bir telefon uygulaması: **sakin, dan
 **Canlı tanıtım:** https://sitedesk-sooty.vercel.app
 **Android uygulamasını indir:** [Releases](../../releases/latest) sayfasındaki `SiteDesk.apk` dosyası (Google Play'de değil; telefonda "bilinmeyen kaynaklardan yükleme" izni ister). Uygulamada **"Sitemi Ekle (Yönetici)"** ile kendi deneme sitenizi kurup yönetici olarak deneyebilirsiniz; kendi cep numaranızı kullanın (SMS ile doğrulanmaz). iPhone sürümü şu an yok.
 
+<p align="center"><img src="docs/tanitim.gif" width="320" alt="SiteDesk tanıtım"></p>
+
+<p align="center">🎬 <a href="../../releases/latest/download/SiteDesk-tanitim.mp4">Tanıtım videosu (MP4) / Demo video</a></p>
+
+| Sakin · Resident | | |
+|---|---|---|
+| <img src="docs/gorseller/02-sakin-yeni-kayit.png" width="240"> | <img src="docs/gorseller/03-sakin-kayit-takibi.png" width="240"> | <img src="docs/gorseller/04-sakin-kargo-bildirimi.png" width="240"> |
+| **Danışma · Front desk** | | **Yönetici · Manager** |
+| <img src="docs/gorseller/05-danisma-kargo.png" width="240"> | <img src="docs/gorseller/06-danisma-ziyaretci.png" width="240"> | <img src="docs/gorseller/07-yonetici-kayitlar.png" width="240"> |
+
 ## Ne yapar?
 
 | Rol | Neler yapabilir |
@@ -54,7 +64,7 @@ scripts/               Veritabanı aracı, yedek, demo kurulumu
 1. Bir Supabase projesi açın; `.env.example` dosyasını `.env.local` olarak kopyalayıp değerleri doldurun.
 2. `npm install` → `npm run db:migrate` (veritabanını kurar) → `npm run db:test` (testleri çalıştırır).
 3. Demo sitesi ve deneme hesapları için: `node --env-file=.env.local scripts/demo-mobil.mjs` (şifreler `.env.local`'a yazılır). Kendinizi sistem yöneticisi yapmak için `supabase/sistem_yoneticisi.sql` içindeki e-postayı değiştirip `npm run db:run supabase/sistem_yoneticisi.sql`. Web sitesindeki gece işleri (yedek, temizlik) için ayrıca `CRON_SECRET`, `BACKUP_KEY`, `BLOB_READ_WRITE_TOKEN` gerekir.
-4. Uygulama: `cd mobil && npm install`, `mobil/.env.local` içine `EXPO_PUBLIC_SUPABASE_URL`, `EXPO_PUBLIC_SUPABASE_PUBLISHABLE_KEY`, `EXPO_PUBLIC_WEB_URL` yazın, sonra `npx expo start`. Bildirimler için APK derlemek gerekir (`eas build -p android --profile preview`).
+4. Uygulama: `cd mobil && npm install`, `mobil/.env.local` içine `EXPO_PUBLIC_SUPABASE_URL`, `EXPO_PUBLIC_SUPABASE_PUBLISHABLE_KEY`, `EXPO_PUBLIC_WEB_URL` yazın, sonra `npx expo start`. Bildirimler için kendi Firebase projenizin `google-services.json` dosyasını `mobil/` içine koyup APK derlemek gerekir (`eas build -p android --profile preview`).
 
 ## Nasıl geliştirildi?
 
@@ -104,7 +114,7 @@ A free mobile app for residential complexes in Turkey (apartment blocks and vill
 1. Create a Supabase project; copy `.env.example` to `.env.local` and fill in the values.
 2. `npm install` → `npm run db:migrate` (sets up the database) → `npm run db:test` (runs the tests).
 3. Demo site and test accounts: `node --env-file=.env.local scripts/demo-mobil.mjs` (passwords are written to `.env.local`). To make yourself platform admin, put your email in `supabase/sistem_yoneticisi.sql` and run `npm run db:run supabase/sistem_yoneticisi.sql`. The website's nightly jobs (backup, cleanup) also need `CRON_SECRET`, `BACKUP_KEY` and `BLOB_READ_WRITE_TOKEN`.
-4. App: `cd mobil && npm install`, put `EXPO_PUBLIC_SUPABASE_URL`, `EXPO_PUBLIC_SUPABASE_PUBLISHABLE_KEY` and `EXPO_PUBLIC_WEB_URL` in `mobil/.env.local`, then `npx expo start`. Push notifications need a development/APK build (`eas build -p android --profile preview`).
+4. App: `cd mobil && npm install`, put `EXPO_PUBLIC_SUPABASE_URL`, `EXPO_PUBLIC_SUPABASE_PUBLISHABLE_KEY` and `EXPO_PUBLIC_WEB_URL` in `mobil/.env.local`, then `npx expo start`. Push notifications need your own Firebase project's `google-services.json` in `mobil/` and an APK build (`eas build -p android --profile preview`).
 
 ### How it was built
 
